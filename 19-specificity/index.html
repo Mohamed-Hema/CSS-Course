@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 19 – Specificity & Cascade | BrewHaven Coffee</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        background-color: #faf6f1;
+        color: #3e2723;
+        padding: 40px 20px;
+      }
+      .page-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+      }
+      .subtitle {
+        font-style: italic;
+        color: #795548;
+        margin-bottom: 40px;
+      }
+      .exercise {
+        background: #fffaf0;
+        border: 1px solid #d7ccc8;
+        border-radius: 10px;
+        padding: 24px;
+        margin-bottom: 32px;
+      }
+      .exercise h2 {
+        font-size: 1.2rem;
+        color: #4e342e;
+        margin-bottom: 16px;
+        border-bottom: 1px solid #d7ccc8;
+        padding-bottom: 8px;
+      }
+      .result-box {
+        background: #efebe9;
+        border-radius: 8px;
+        padding: 20px;
+      }
+      .inheritance-demo {
+        font-size: 1.1rem;
+        color: #4e342e;
+        border: 2px dashed #795548;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .inheritance-demo p {
+        padding: 8px 12px;
+        margin: 6px 0;
+        background: #fffaf0;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <h1>BrewHaven Coffee</h1>
+      <p class="subtitle">Specificity & Cascade Demonstrations</p>
+
+      <div class="exercise">
+        <h2>Exercise 1 — Specificity: element vs class vs ID</h2>
+        <div class="result-box">
+          <p class="drink-name" id="featured-drink">
+            Espresso — which selector wins?
+          </p>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <h2>Exercise 2 — !important override</h2>
+        <div class="result-box">
+          <p class="promo-text" id="promo-main">
+            Today's Special: Pumpkin Spice Latte
+          </p>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <h2>Exercise 3 — Inheritance: inherit, initial, unset</h2>
+        <div class="inheritance-demo">
+          <p class="child-inherit">
+            child-inherit — should inherit parent color and border
+          </p>
+          <p class="child-initial">
+            child-initial — should reset to browser default
+          </p>
+          <p class="child-unset">
+            child-unset — should act like inherit for inherited props
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

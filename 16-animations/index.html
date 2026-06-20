@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 16 – CSS Animations | BrewHaven Coffee</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        background-color: #1a0e0a;
+        color: #fdf6ec;
+        padding: 0;
+      }
+      header {
+        text-align: center;
+        padding: 60px 20px 40px;
+        background: linear-gradient(180deg, #2c1a12, #1a0e0a);
+      }
+      header h1 {
+        font-size: 2.8rem;
+        margin-bottom: 8px;
+        color: #fdf6ec;
+      }
+      header p {
+        font-style: italic;
+        color: #a1887f;
+        margin-bottom: 24px;
+      }
+      .open-badge {
+        display: inline-block;
+        background: #6d4c41;
+        color: #fdf6ec;
+        padding: 8px 24px;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .cup-container {
+        display: flex;
+        justify-content: center;
+        padding: 40px 20px;
+      }
+      .coffee-cup {
+        font-size: 5rem;
+        text-align: center;
+        position: relative;
+      }
+      .steam-row {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 4px;
+      }
+      .steam {
+        font-size: 2rem;
+        color: #d7ccc8;
+        opacity: 0.6;
+      }
+      .specials-section {
+        padding: 40px 20px;
+        text-align: center;
+        overflow: hidden;
+      }
+      .specials-section h2 {
+        margin-bottom: 20px;
+        color: #d7ccc8;
+      }
+      .specials-banner {
+        display: inline-block;
+        white-space: nowrap;
+        color: #fdf6ec;
+        font-size: 1.1rem;
+        background: #3e2723;
+        padding: 16px 40px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>BrewHaven Coffee</h1>
+      <p>Artisan roasts, cozy vibes</p>
+      <span class="open-badge">Now Open</span>
+    </header>
+
+    <div class="cup-container">
+      <div class="coffee-cup">
+        <div class="steam-row">
+          <span class="steam">〰</span>
+          <span class="steam">〰</span>
+          <span class="steam">〰</span>
+        </div>
+        ☕
+      </div>
+    </div>
+
+    <div class="specials-section">
+      <h2>Today's Specials</h2>
+      <div class="specials-banner">
+        ☕ Espresso $3.50 &nbsp;•&nbsp; 🍵 Matcha Latte $5.00 &nbsp;•&nbsp; 🧋
+        Cold Brew $4.00 &nbsp;•&nbsp; ☁️ Cappuccino $4.50 &nbsp;•&nbsp; 🍫 Mocha
+        $4.75 &nbsp;•&nbsp;
+      </div>
+    </div>
+  </body>
+</html>

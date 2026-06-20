@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 13 – CSS Grid | BrewHaven Coffee</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        background-color: #fdf6ec;
+        color: #3e2723;
+        padding: 40px 20px;
+      }
+      .page-container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      h1 {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+      }
+      .tagline {
+        text-align: center;
+        font-style: italic;
+        color: #795548;
+        margin-bottom: 40px;
+      }
+      .section {
+        margin-bottom: 48px;
+      }
+      .section-title {
+        font-size: 1.3rem;
+        color: #4e342e;
+        border-bottom: 2px solid #d7ccc8;
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+      }
+      .menu-card {
+        background: #fffaf0;
+        border: 1px solid #d7ccc8;
+        border-radius: 10px;
+        padding: 20px;
+      }
+      .menu-card h3 {
+        color: #4e342e;
+        margin-bottom: 8px;
+      }
+      .menu-card p {
+        font-size: 0.9rem;
+        color: #795548;
+      }
+      .menu-card .price {
+        font-weight: bold;
+        color: #6d4c41;
+        margin-top: 12px;
+      }
+      .pl-header {
+        background: #3e2723;
+        color: #fdf6ec;
+        padding: 20px;
+        border-radius: 6px;
+      }
+      .pl-sidebar {
+        background: #efebe9;
+        padding: 20px;
+        border-radius: 6px;
+      }
+      .pl-sidebar h3 {
+        color: #4e342e;
+        margin-bottom: 12px;
+      }
+      .pl-sidebar ul {
+        list-style: none;
+      }
+      .pl-sidebar li {
+        padding: 8px 0;
+        color: #6d4c41;
+        border-bottom: 1px solid #d7ccc8;
+      }
+      .pl-main {
+        background: #fffaf0;
+        padding: 20px;
+        border-radius: 6px;
+      }
+      .pl-main p {
+        color: #5d4037;
+        line-height: 1.6;
+      }
+      .pl-footer {
+        background: #d7ccc8;
+        padding: 16px;
+        border-radius: 6px;
+        text-align: center;
+        color: #3e2723;
+      }
+      .special-card {
+        background: #fffaf0;
+        border: 1px solid #d7ccc8;
+        border-radius: 10px;
+        padding: 20px;
+      }
+      .special-card h3 {
+        color: #4e342e;
+        margin-bottom: 8px;
+      }
+      .special-card p {
+        font-size: 0.9rem;
+        color: #795548;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <h1>BrewHaven Coffee</h1>
+      <p class="tagline">Artisan roasts, cozy vibes</p>
+
+      <div class="section">
+        <h2 class="section-title">Menu Grid — 3 Columns</h2>
+        <div class="menu-grid">
+          <div class="menu-card">
+            <h3>Espresso</h3>
+            <p>Rich and bold</p>
+            <p class="price">$3.50</p>
+          </div>
+          <div class="menu-card">
+            <h3>Cappuccino</h3>
+            <p>Milk foam</p>
+            <p class="price">$4.50</p>
+          </div>
+          <div class="menu-card">
+            <h3>Cold Brew</h3>
+            <p>Slow-steeped</p>
+            <p class="price">$4.00</p>
+          </div>
+          <div class="menu-card">
+            <h3>Matcha Latte</h3>
+            <p>Ceremonial matcha</p>
+            <p class="price">$5.00</p>
+          </div>
+          <div class="menu-card">
+            <h3>Mocha</h3>
+            <p>Chocolate espresso</p>
+            <p class="price">$4.75</p>
+          </div>
+          <div class="menu-card">
+            <h3>Chai Latte</h3>
+            <p>Spiced chai</p>
+            <p class="price">$4.25</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Page Layout — Template Areas</h2>
+        <div class="page-layout">
+          <header class="pl-header"><h3>BrewHaven Coffee</h3></header>
+          <aside class="pl-sidebar">
+            <h3>Categories</h3>
+            <ul>
+              <li>Espresso</li>
+              <li>Cold Brew</li>
+              <li>Tea</li>
+              <li>Pastries</li>
+            </ul>
+          </aside>
+          <main class="pl-main">
+            <p>
+              Welcome to BrewHaven. Browse our full menu of handcrafted
+              beverages, pastries, and seasonal specials.
+            </p>
+          </main>
+          <footer class="pl-footer">42 Bean Street, Roastville</footer>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Specials Grid — Auto-Fill</h2>
+        <div class="specials-grid">
+          <div class="special-card">
+            <h3>Pumpkin Spice Latte</h3>
+            <p>Seasonal favourite</p>
+          </div>
+          <div class="special-card">
+            <h3>Honey Flat White</h3>
+            <p>Local honey</p>
+          </div>
+          <div class="special-card">
+            <h3>Lavender Cold Brew</h3>
+            <p>Summer special</p>
+          </div>
+          <div class="special-card">
+            <h3>Cardamom Cortado</h3>
+            <p>Bold & aromatic</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

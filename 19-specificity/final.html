@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 19 – Specificity & Cascade | BrewHaven Coffee</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        background-color: #faf6f1;
+        color: #3e2723;
+        padding: 40px 20px;
+      }
+      .page-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+      }
+      .subtitle {
+        font-style: italic;
+        color: #795548;
+        margin-bottom: 40px;
+      }
+      .exercise {
+        background: #fffaf0;
+        border: 1px solid #d7ccc8;
+        border-radius: 10px;
+        padding: 24px;
+        margin-bottom: 32px;
+      }
+      .exercise h2 {
+        font-size: 1.2rem;
+        color: #4e342e;
+        margin-bottom: 16px;
+        border-bottom: 1px solid #d7ccc8;
+        padding-bottom: 8px;
+      }
+      .result-box {
+        background: #efebe9;
+        border-radius: 8px;
+        padding: 20px;
+      }
+
+      p {
+        color: #666;
+      }
+      .drink-name {
+        color: #2e7d32;
+      }
+      #featured-drink {
+        color: #d4a373;
+      }
+
+      #promo-main {
+        color: #d4a373;
+      }
+      .promo-text {
+        color: #c62828 !important;
+      }
+
+      .inheritance-demo {
+        font-size: 1.1rem;
+        color: #4e342e;
+        border: 2px dashed #795548;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .inheritance-demo p {
+        padding: 8px 12px;
+        margin: 6px 0;
+        background: #fffaf0;
+        border-radius: 4px;
+      }
+      .child-inherit {
+        color: inherit;
+        border: inherit;
+      }
+      .child-initial {
+        color: initial;
+        font-size: initial;
+      }
+      .child-unset {
+        color: unset;
+        border: unset;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <h1>BrewHaven Coffee</h1>
+      <p class="subtitle">Specificity & Cascade Demonstrations</p>
+
+      <div class="exercise">
+        <h2>Exercise 1 — Specificity: element vs class vs ID</h2>
+        <div class="result-box">
+          <p class="drink-name" id="featured-drink">
+            Espresso — ID wins: #d4a373 (gold)
+          </p>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <h2>Exercise 2 — !important override</h2>
+        <div class="result-box">
+          <p class="promo-text" id="promo-main">
+            Today's Special: Pumpkin Spice Latte — !important wins: red
+          </p>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <h2>Exercise 3 — Inheritance: inherit, initial, unset</h2>
+        <div class="inheritance-demo">
+          <p class="child-inherit">
+            child-inherit — inherits parent color and border
+          </p>
+          <p class="child-initial">
+            child-initial — resets to browser default (black, 16px)
+          </p>
+          <p class="child-unset">
+            child-unset — acts like inherit for inherited props
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

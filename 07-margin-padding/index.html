@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 07 – Margin & Padding | BrewHaven Coffee</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        background-color: #fdf6ec;
+        color: #3e2723;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .tagline {
+        font-style: italic;
+        color: #795548;
+      }
+      .section-title {
+        font-size: 1.4rem;
+        color: #4e342e;
+        border-bottom: 2px solid #d7ccc8;
+      }
+      .menu-item {
+        background: #fffaf0;
+        border: 1px solid #d7ccc8;
+        border-radius: 8px;
+      }
+      .menu-item h3 {
+        color: #4e342e;
+      }
+      .menu-item .price {
+        font-weight: bold;
+        color: #6d4c41;
+      }
+      .menu-item .desc {
+        font-size: 0.9rem;
+        color: #795548;
+      }
+      .collapse-demo {
+        background: #efebe9;
+        border: 1px dashed #bcaaa4;
+        border-radius: 6px;
+      }
+      .collapse-demo h2 {
+        background: #d7ccc8;
+        color: #3e2723;
+      }
+      .collapse-demo p {
+        background: #fffaf0;
+      }
+      .hint {
+        font-size: 0.85rem;
+        color: #a1887f;
+        font-style: italic;
+      }
+      .address {
+        text-align: center;
+        color: #795548;
+        border-top: 1px solid #d7ccc8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <h1>BrewHaven Coffee</h1>
+      <p class="tagline">Artisan roasts, cozy vibes</p>
+
+      <h2 class="section-title">Menu</h2>
+
+      <div class="menu-item">
+        <h3>Espresso</h3>
+        <p class="desc">Rich and bold single shot</p>
+        <p class="price">$3.50</p>
+      </div>
+
+      <div class="menu-item">
+        <h3>Cappuccino</h3>
+        <p class="desc">Espresso with steamed milk foam</p>
+        <p class="price">$4.50</p>
+      </div>
+
+      <div class="menu-item">
+        <h3>Cold Brew</h3>
+        <p class="desc">Slow-steeped for 16 hours</p>
+        <p class="price">$4.00</p>
+      </div>
+
+      <div class="menu-item">
+        <h3>Matcha Latte</h3>
+        <p class="desc">Ceremonial-grade matcha</p>
+        <p class="price">$5.00</p>
+      </div>
+
+      <h2 class="section-title">Margin Collapse Demo</h2>
+      <p class="hint">
+        Both h2 and p below have 24px margins — but the gap between them is only
+        24px (not 48px). That is margin collapse!
+      </p>
+
+      <div class="collapse-demo">
+        <h2>Section Title</h2>
+        <p>Paragraph content goes here.</p>
+      </div>
+
+      <p class="address">42 Bean Street, Roastville</p>
+    </div>
+  </body>
+</html>

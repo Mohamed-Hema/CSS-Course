@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 03 – Colors & Backgrounds | BrewHaven Coffee</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      h1 {
+        color: saddlebrown;
+      }
+
+      .hex-demo {
+        color: #4a3728;
+      }
+
+      .rgb-demo {
+        color: rgb(210, 160, 110);
+      }
+
+      .hsl-demo {
+        color: hsl(30, 40%, 30%);
+      }
+
+      .hero {
+        background-image: linear-gradient(to right, #3c2415, #d4a574);
+        color: #fff;
+        padding: 60px 30px;
+        text-align: center;
+      }
+
+      .section-about {
+        background-color: rgba(111, 78, 55, 0.1);
+        padding: 30px;
+      }
+
+      .section-specials {
+        background-color: rgba(212, 165, 116, 0.2);
+        padding: 30px;
+      }
+
+      .color-demos {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <h1>BrewHaven Coffee</h1>
+      <p>Artisan roasts, cozy vibes</p>
+    </div>
+
+    <section class="color-demos">
+      <h2>Color Format Demos</h2>
+      <p class="hex-demo">This text uses a hex color.</p>
+      <p class="rgb-demo">This text uses an rgb() color.</p>
+      <p class="hsl-demo">This text uses an hsl() color.</p>
+    </section>
+
+    <section class="section-about">
+      <h2>About Us</h2>
+      <p>
+        BrewHaven has been serving hand-crafted beverages at 42 Bean Street,
+        Roastville since 2018.
+      </p>
+    </section>
+
+    <section class="section-specials">
+      <h2>Today's Specials</h2>
+      <p>
+        Espresso — $3.50 &nbsp;|&nbsp; Cappuccino — $4.50 &nbsp;|&nbsp; Cold
+        Brew — $4.00 &nbsp;|&nbsp; Matcha Latte — $5.00
+      </p>
+    </section>
+  </body>
+</html>

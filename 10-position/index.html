@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 10 – Positioning | BrewHaven Coffee</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        background-color: #fdf6ec;
+        color: #3e2723;
+      }
+      .page-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .tagline {
+        font-style: italic;
+        color: #795548;
+      }
+      .section-title {
+        font-size: 1.4rem;
+        color: #4e342e;
+        border-bottom: 2px solid #d7ccc8;
+        padding-bottom: 8px;
+        margin: 32px 0 16px;
+      }
+      .navbar {
+        background: #3e2723;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 24px;
+        z-index: 1000;
+      }
+      .navbar .brand {
+        color: #fdf6ec;
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+      .navbar .nav-links a {
+        color: #fdf6ec;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 0.95rem;
+      }
+      .navbar .nav-links a:hover {
+        color: #d7ccc8;
+      }
+      .product-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-top: 16px;
+      }
+      .product-card {
+        background: #fffaf0;
+        border: 1px solid #d7ccc8;
+        border-radius: 10px;
+        width: 240px;
+        overflow: hidden;
+      }
+      .product-card .card-img {
+        width: 100%;
+        height: 140px;
+        background: #d7ccc8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #795548;
+        font-style: italic;
+      }
+      .product-card .card-body {
+        padding: 16px;
+      }
+      .product-card h3 {
+        margin-bottom: 4px;
+        color: #4e342e;
+      }
+      .product-card .price {
+        font-weight: bold;
+        color: #6d4c41;
+        margin-top: 8px;
+      }
+      .badge {
+        background: #c62828;
+        color: #fff;
+        font-size: 0.75rem;
+        font-weight: bold;
+        padding: 4px 10px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .layout-row {
+        display: flex;
+        gap: 0;
+        margin-top: 16px;
+        border: 1px solid #d7ccc8;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .sticky-sidebar {
+        width: 200px;
+        background: #efebe9;
+        padding: 20px;
+        align-self: flex-start;
+      }
+      .sticky-sidebar h3 {
+        margin-bottom: 12px;
+        color: #4e342e;
+      }
+      .sticky-sidebar ul {
+        list-style: none;
+      }
+      .sticky-sidebar li {
+        padding: 8px 0;
+        color: #6d4c41;
+        border-bottom: 1px solid #d7ccc8;
+      }
+      .scroll-content {
+        flex: 1;
+        padding: 20px;
+        max-height: 500px;
+        overflow-y: auto;
+      }
+      .scroll-content h3 {
+        margin: 24px 0 8px;
+        color: #4e342e;
+      }
+      .scroll-content h3:first-child {
+        margin-top: 0;
+      }
+      .scroll-content p {
+        line-height: 1.6;
+        color: #5d4037;
+        margin-bottom: 12px;
+      }
+      .hint {
+        font-size: 0.85rem;
+        color: #a1887f;
+        font-style: italic;
+        margin-top: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <span class="brand">BrewHaven Coffee</span>
+      <div class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#specials">Specials</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="page-container">
+      <h1>BrewHaven Coffee</h1>
+      <p class="tagline">Artisan roasts, cozy vibes</p>
+
+      <h2 class="section-title">Menu Cards with Badge</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="card-img">Photo</div>
+          <div class="card-body">
+            <h3>Espresso</h3>
+            <span class="badge">New</span>
+            <p class="price">$3.50</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-img">Photo</div>
+          <div class="card-body">
+            <h3>Cappuccino</h3>
+            <p class="price">$4.50</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-img">Photo</div>
+          <div class="card-body">
+            <h3>Cold Brew</h3>
+            <p class="price">$4.00</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Sticky Sidebar Layout</h2>
+      <div class="layout-row">
+        <div class="sticky-sidebar">
+          <h3>Categories</h3>
+          <ul>
+            <li>Espresso</li>
+            <li>Cold Brew</li>
+            <li>Tea</li>
+            <li>Pastries</li>
+          </ul>
+        </div>
+        <div class="scroll-content">
+          <h3>About Our Coffee</h3>
+          <p>
+            At BrewHaven, every cup is crafted with care. We source our beans
+            from small-batch roasters who share our passion for quality.
+          </p>
+          <h3>Our Story</h3>
+          <p>
+            Founded in 2018, BrewHaven began as a small corner cafe. Today we
+            serve hundreds of coffee lovers daily at our Roastville location.
+          </p>
+          <h3>Sourcing</h3>
+          <p>
+            We partner with farmers in Ethiopia, Colombia, and Guatemala to
+            bring you the finest single-origin and blended coffees.
+          </p>
+          <h3>Roasting</h3>
+          <p>
+            Every batch is roasted in-house by our team. We roast Monday through
+            Friday to ensure the freshest possible beans.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

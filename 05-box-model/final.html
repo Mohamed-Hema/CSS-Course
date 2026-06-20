@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 05 – The Box Model | BrewHaven Coffee</title>
+    <style>
+      body {
+        background-color: #fff8f0;
+        font-family: sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #4a3728;
+        text-align: center;
+      }
+
+      .product-card {
+        width: 280px;
+        padding: 20px;
+        border: 2px solid #6f4e37;
+        margin: 15px;
+        background-color: #fff;
+      }
+
+      .box-default {
+        width: 300px;
+        padding: 20px;
+        border: 5px solid #6f4e37;
+        background-color: #f5deb3;
+      }
+
+      .box-border {
+        width: 300px;
+        padding: 20px;
+        border: 5px solid #4a3728;
+        background-color: #d4a574;
+        box-sizing: border-box;
+      }
+
+      .page-wrapper {
+        max-width: 700px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #e0d5c9;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #6f4e37;
+      }
+
+      .card-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>BrewHaven Coffee</h1>
+    <p class="subtitle">Artisan roasts, cozy vibes</p>
+
+    <h2>Menu Cards</h2>
+    <div class="card-container">
+      <div class="product-card">
+        <h3>Espresso</h3>
+        <p>$3.50</p>
+      </div>
+      <div class="product-card">
+        <h3>Cappuccino</h3>
+        <p>$4.50</p>
+      </div>
+      <div class="product-card">
+        <h3>Cold Brew</h3>
+        <p>$4.00</p>
+      </div>
+      <div class="product-card">
+        <h3>Matcha Latte</h3>
+        <p>$5.00</p>
+      </div>
+    </div>
+
+    <h2>Box-Sizing Comparison</h2>
+    <p>
+      Both boxes have <code>width: 300px</code>, <code>padding: 20px</code>, and
+      a <code>5px border</code>.
+    </p>
+    <div class="box-default">
+      <strong>content-box (default)</strong><br />
+      Total width = 300 + 40 + 10 = 350px
+    </div>
+    <br />
+    <div class="box-border">
+      <strong>border-box</strong><br />
+      Total width stays 300px
+    </div>
+
+    <div class="page-wrapper">
+      <h2>About BrewHaven</h2>
+      <p>Serving artisan coffee at 42 Bean Street, Roastville since 2018.</p>
+    </div>
+  </body>
+</html>

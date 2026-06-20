@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 06 – Borders & Outlines | BrewHaven Coffee</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        background-color: #fdf6ec;
+        color: #3e2723;
+        padding: 40px 20px;
+      }
+      h1 {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+      }
+      .tagline {
+        text-align: center;
+        font-style: italic;
+        color: #795548;
+        margin-bottom: 32px;
+      }
+      .section-title {
+        font-size: 1.4rem;
+        margin: 32px 0 16px;
+        color: #4e342e;
+      }
+      .menu-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: center;
+      }
+      .menu-card {
+        background: #fffaf0;
+        width: 220px;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid #d7ccc8;
+        border-radius: 12px;
+      }
+      .menu-card h3 {
+        margin-bottom: 8px;
+      }
+      .menu-card .price {
+        font-weight: bold;
+        color: #6d4c41;
+        margin-top: 8px;
+      }
+      .profile-section {
+        text-align: center;
+        margin-top: 40px;
+      }
+      .profile-img {
+        width: 120px;
+        height: 120px;
+        background-color: #d7ccc8;
+        display: inline-block;
+        border-radius: 50%;
+        border: 3px solid #6d4c41;
+      }
+      .profile-section p {
+        margin-top: 12px;
+        font-style: italic;
+      }
+      .hover-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: center;
+        margin-top: 24px;
+      }
+      .shadow-card {
+        background: #fffaf0;
+        width: 240px;
+        padding: 24px;
+        text-align: center;
+        transition: box-shadow 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+      .shadow-card:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      }
+      .shadow-card h3 {
+        margin-bottom: 8px;
+      }
+      .shadow-card .desc {
+        font-size: 0.9rem;
+        color: #795548;
+      }
+      .inset-card {
+        box-shadow: inset 0 4px 12px rgba(62, 39, 35, 0.15);
+      }
+
+      .card-solid {
+        border: 2px solid #3e2723;
+      }
+      .card-dashed {
+        border: 2px dashed #6d4c41;
+      }
+      .card-dotted {
+        border: 2px dotted #795548;
+      }
+      .card-double {
+        border: 3px double #4e342e;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>BrewHaven Coffee</h1>
+    <p class="tagline">Artisan roasts, cozy vibes</p>
+
+    <h2 class="section-title">Our Menu — Border Styles</h2>
+    <div class="menu-grid">
+      <div class="menu-card card-solid">
+        <h3>Espresso</h3>
+        <p>Rich and bold single shot</p>
+        <p class="price">$3.50</p>
+      </div>
+      <div class="menu-card card-dashed">
+        <h3>Cappuccino</h3>
+        <p>Espresso with steamed milk foam</p>
+        <p class="price">$4.50</p>
+      </div>
+      <div class="menu-card card-dotted">
+        <h3>Cold Brew</h3>
+        <p>Slow-steeped for 16 hours</p>
+        <p class="price">$4.00</p>
+      </div>
+      <div class="menu-card card-double">
+        <h3>Matcha Latte</h3>
+        <p>Ceremonial-grade matcha</p>
+        <p class="price">$5.00</p>
+      </div>
+    </div>
+
+    <h2 class="section-title">Barista Profile</h2>
+    <div class="profile-section">
+      <div class="profile-img"></div>
+      <p>Our head barista, Sofia</p>
+    </div>
+
+    <h2 class="section-title">Shadow Cards</h2>
+    <div class="hover-cards">
+      <div class="shadow-card">
+        <h3>Single Origin</h3>
+        <p class="desc">Ethiopian Yirgacheffe</p>
+      </div>
+      <div class="shadow-card inset-card">
+        <h3>Seasonal Blend</h3>
+        <p class="desc">Spring harvest special</p>
+      </div>
+      <div class="shadow-card">
+        <h3>Decaf</h3>
+        <p class="desc">Swiss water process</p>
+      </div>
+    </div>
+  </body>
+</html>

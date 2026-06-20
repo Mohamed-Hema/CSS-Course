@@ -1,0 +1,20 @@
+body {
+  background-color: #ccc;
+}
+/* h1 {
+  color: blue;
+} */
+.paragraph {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+#heading {
+  color: green;
+}
+span {
+  color: yellow;
+}

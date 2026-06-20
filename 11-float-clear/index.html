@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 11 – Float & Clear | BrewHaven Coffee</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        background-color: #fdf6ec;
+        color: #3e2723;
+        padding: 40px 20px;
+      }
+      .page-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      h1 {
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+      }
+      .tagline {
+        font-style: italic;
+        color: #795548;
+        margin-bottom: 32px;
+      }
+      .section {
+        background: #fffaf0;
+        border: 1px solid #d7ccc8;
+        border-radius: 10px;
+        padding: 24px;
+        margin-bottom: 32px;
+      }
+      .section h2 {
+        font-size: 1.3rem;
+        color: #4e342e;
+        border-bottom: 1px solid #d7ccc8;
+        padding-bottom: 8px;
+        margin-bottom: 16px;
+      }
+      .coffee-img {
+        width: 180px;
+        height: 130px;
+        background: #d7ccc8;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #795548;
+        font-style: italic;
+      }
+      .float-text p {
+        line-height: 1.7;
+        margin-bottom: 8px;
+        color: #5d4037;
+      }
+      .two-col-layout {
+        background: #fdf6ec;
+      }
+      .menu-column {
+        background: #efebe9;
+        padding: 16px;
+        border-radius: 6px;
+      }
+      .menu-column h3 {
+        color: #4e342e;
+        margin-bottom: 12px;
+      }
+      .menu-column ul {
+        list-style: none;
+      }
+      .menu-column li {
+        padding: 6px 0;
+        border-bottom: 1px solid #d7ccc8;
+        color: #6d4c41;
+      }
+      .sidebar-column {
+        background: #e8e0d8;
+        padding: 16px;
+        border-radius: 6px;
+      }
+      .sidebar-column h3 {
+        color: #4e342e;
+        margin-bottom: 12px;
+      }
+      .sidebar-column p {
+        font-size: 0.9rem;
+        color: #795548;
+        margin-bottom: 8px;
+      }
+      .layout-footer {
+        background: #d7ccc8;
+        padding: 16px;
+        border-radius: 6px;
+        text-align: center;
+        color: #4e342e;
+        font-weight: bold;
+      }
+      .gallery-item {
+        background: #d7ccc8;
+        border-radius: 8px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #795548;
+        font-style: italic;
+      }
+      .hint {
+        font-size: 0.85rem;
+        color: #a1887f;
+        font-style: italic;
+        margin-top: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <h1>BrewHaven Coffee</h1>
+      <p class="tagline">Artisan roasts, cozy vibes</p>
+
+      <div class="section">
+        <h2>Floated Image</h2>
+        <div class="coffee-img">Coffee Photo</div>
+        <div class="float-text">
+          <p>
+            At BrewHaven, we believe every cup tells a story. Our master
+            roasters select only the finest single-origin beans from farms in
+            Ethiopia, Colombia, and Guatemala.
+          </p>
+          <p>
+            The result is a rich, complex flavour that keeps our guests coming
+            back every morning. Stop by and taste the difference that passion
+            makes.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Two-Column Layout</h2>
+        <div class="two-col-layout">
+          <div class="menu-column">
+            <h3>Our Menu</h3>
+            <ul>
+              <li>Espresso — $3.50</li>
+              <li>Cappuccino — $4.50</li>
+              <li>Cold Brew — $4.00</li>
+              <li>Matcha Latte — $5.00</li>
+            </ul>
+          </div>
+          <div class="sidebar-column">
+            <h3>Today's Special</h3>
+            <p>Seasonal Pumpkin Spice Latte — $5.50</p>
+            <p>
+              Available while supplies last. Made with organic spices and local
+              dairy.
+            </p>
+          </div>
+          <div class="layout-footer">
+            42 Bean Street, Roastville &mdash; Open 7am–7pm
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Gallery</h2>
+        <div class="gallery">
+          <div class="gallery-item">Espresso Shot</div>
+          <div class="gallery-item">Cappuccino Art</div>
+          <div class="gallery-item">Cold Brew Setup</div>
+        </div>
+        <p class="hint">
+          Gallery uses floated items cleared by a ::after clearfix.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

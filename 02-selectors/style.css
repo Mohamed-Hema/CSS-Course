@@ -1,0 +1,25 @@
+body {
+  background-color: #fff8f0;
+  font-family: sans-serif;
+}
+.quote {
+  color: rgb(108, 138, 0);
+}
+.menu {
+  color: darkblue;
+}
+h2 {
+  color: red;
+}
+.menu-section {
+  background-color: #fff;
+}
+#menu-full {
+  background-color: #ccc;
+}
+#special-offer {
+  border: 2px solid #6f4e37;
+  background-color: #fcebd5;
+  color: #7b7373;
+  padding: 15px;
+}

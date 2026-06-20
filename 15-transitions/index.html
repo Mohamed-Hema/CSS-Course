@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 15 – Transitions & Transforms | BrewHaven Coffee</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        background-color: #fdf6ec;
+        color: #3e2723;
+        padding: 40px 20px;
+      }
+      .page-container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      h1 {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+      }
+      .tagline {
+        text-align: center;
+        font-style: italic;
+        color: #795548;
+        margin-bottom: 40px;
+      }
+      .section {
+        margin-bottom: 56px;
+      }
+      .section-title {
+        font-size: 1.3rem;
+        color: #4e342e;
+        border-bottom: 2px solid #d7ccc8;
+        padding-bottom: 8px;
+        margin-bottom: 24px;
+      }
+      .card-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .menu-card {
+        background: #fffaf0;
+        border: 1px solid #d7ccc8;
+        border-radius: 10px;
+        padding: 24px;
+        flex-basis: 220px;
+        flex-grow: 1;
+        cursor: pointer;
+      }
+      .menu-card h3 {
+        color: #4e342e;
+        margin-bottom: 8px;
+      }
+      .menu-card p {
+        font-size: 0.9rem;
+        color: #795548;
+      }
+      .menu-card .price {
+        font-weight: bold;
+        color: #6d4c41;
+        margin-top: 12px;
+      }
+      .cup-row {
+        display: flex;
+        justify-content: center;
+        gap: 48px;
+      }
+      .cup-item {
+        text-align: center;
+      }
+      .cup-icon {
+        font-size: 3.5rem;
+        display: inline-block;
+        cursor: pointer;
+      }
+      .cup-label {
+        margin-top: 8px;
+        font-size: 0.9rem;
+        color: #795548;
+      }
+      .flip-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: center;
+      }
+      .flip-card {
+        width: 200px;
+        height: 220px;
+        perspective: 800px;
+        cursor: pointer;
+      }
+      .flip-inner {
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        position: relative;
+      }
+      .flip-front,
+      .flip-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+      }
+      .flip-front {
+        background: #fffaf0;
+        border: 1px solid #d7ccc8;
+      }
+      .flip-front h3 {
+        color: #4e342e;
+        margin-bottom: 8px;
+      }
+      .flip-front .icon {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+      }
+      .flip-back {
+        background: #3e2723;
+        color: #fdf6ec;
+      }
+      .flip-back p {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        margin-bottom: 8px;
+      }
+      .flip-back .price {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #d7ccc8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <h1>BrewHaven Coffee</h1>
+      <p class="tagline">Artisan roasts, cozy vibes</p>
+
+      <div class="section">
+        <h2 class="section-title">Hover Transitions</h2>
+        <div class="card-grid">
+          <div class="menu-card">
+            <h3>Espresso</h3>
+            <p>Rich and bold single shot</p>
+            <p class="price">$3.50</p>
+          </div>
+          <div class="menu-card">
+            <h3>Cappuccino</h3>
+            <p>Espresso with steamed milk foam</p>
+            <p class="price">$4.50</p>
+          </div>
+          <div class="menu-card">
+            <h3>Cold Brew</h3>
+            <p>Slow-steeped for 16 hours</p>
+            <p class="price">$4.00</p>
+          </div>
+          <div class="menu-card">
+            <h3>Matcha Latte</h3>
+            <p>Ceremonial-grade matcha</p>
+            <p class="price">$5.00</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Rotate on Hover</h2>
+        <div class="cup-row">
+          <div class="cup-item">
+            <div class="cup-icon">☕</div>
+            <p class="cup-label">Espresso</p>
+          </div>
+          <div class="cup-item">
+            <div class="cup-icon">🍵</div>
+            <p class="cup-label">Matcha</p>
+          </div>
+          <div class="cup-item">
+            <div class="cup-icon">🧋</div>
+            <p class="cup-label">Cold Brew</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">3D Flip Cards</h2>
+        <div class="flip-grid">
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <div class="icon">☕</div>
+                <h3>Espresso</h3>
+              </div>
+              <div class="flip-back">
+                <p>Rich, concentrated shot of coffee</p>
+                <p class="price">$3.50</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <div class="icon">☁️</div>
+                <h3>Cappuccino</h3>
+              </div>
+              <div class="flip-back">
+                <p>Espresso with velvety steamed foam</p>
+                <p class="price">$4.50</p>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <div class="icon">🍵</div>
+                <h3>Matcha Latte</h3>
+              </div>
+              <div class="flip-back">
+                <p>Ceremonial-grade matcha with oat milk</p>
+                <p class="price">$5.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

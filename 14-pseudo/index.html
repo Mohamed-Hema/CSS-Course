@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Lesson 14 – Pseudo-classes & Pseudo-elements | BrewHaven Coffee
+    </title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        background-color: #fdf6ec;
+        color: #3e2723;
+        padding: 40px 20px;
+      }
+      .page-container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      h1 {
+        text-align: center;
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+      }
+      .tagline {
+        text-align: center;
+        font-style: italic;
+        color: #795548;
+        margin-bottom: 40px;
+      }
+      .section {
+        margin-bottom: 48px;
+      }
+      .section-title {
+        font-size: 1.3rem;
+        color: #4e342e;
+        border-bottom: 2px solid #d7ccc8;
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+      }
+      .card-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .menu-card {
+        background: #fffaf0;
+        border: 1px solid #d7ccc8;
+        border-radius: 10px;
+        padding: 20px;
+        flex-basis: 220px;
+        flex-grow: 1;
+        cursor: pointer;
+        outline: none;
+      }
+      .menu-card h3 {
+        color: #4e342e;
+        margin-bottom: 8px;
+      }
+      .menu-card p {
+        font-size: 0.9rem;
+        color: #795548;
+      }
+      .menu-card .price {
+        font-weight: bold;
+        color: #6d4c41;
+        margin-top: 12px;
+      }
+      .menu-list ul {
+        list-style: none;
+      }
+      .menu-list li {
+        padding: 14px 16px;
+        border-bottom: 1px solid #d7ccc8;
+        color: #5d4037;
+      }
+      .specials-list ul {
+        list-style: none;
+      }
+      .specials-list li {
+        padding: 14px 16px 14px 40px;
+        position: relative;
+        border-bottom: 1px solid #d7ccc8;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .price-tag {
+        font-weight: bold;
+        color: #6d4c41;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <h1>BrewHaven Coffee</h1>
+      <p class="tagline">Artisan roasts, cozy vibes</p>
+
+      <div class="section">
+        <h2 class="section-title">Menu Cards — Hover, Focus, Active</h2>
+        <div class="card-grid">
+          <div class="menu-card" tabindex="0">
+            <h3>Espresso</h3>
+            <p>Rich and bold single shot</p>
+            <p class="price">$3.50</p>
+          </div>
+          <div class="menu-card" tabindex="0">
+            <h3>Cappuccino</h3>
+            <p>Espresso with steamed milk foam</p>
+            <p class="price">$4.50</p>
+          </div>
+          <div class="menu-card" tabindex="0">
+            <h3>Cold Brew</h3>
+            <p>Slow-steeped for 16 hours</p>
+            <p class="price">$4.00</p>
+          </div>
+          <div class="menu-card" tabindex="0">
+            <h3>Matcha Latte</h3>
+            <p>Ceremonial-grade matcha</p>
+            <p class="price">$5.00</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Menu List — nth-child, first, last</h2>
+        <div class="menu-list">
+          <ul>
+            <li>Espresso — $3.50</li>
+            <li>Cappuccino — $4.50</li>
+            <li>Cold Brew — $4.00</li>
+            <li>Matcha Latte — $5.00</li>
+            <li>Mocha — $4.75</li>
+            <li>Chai Latte — $4.25</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2 class="section-title">Specials — ::before icon, ::after badge</h2>
+        <div class="specials-list">
+          <ul>
+            <li>Pumpkin Spice Latte <span class="price-tag">$5.50</span></li>
+            <li>Honey Flat White <span class="price-tag">$5.00</span></li>
+            <li>Lavender Cold Brew <span class="price-tag">$4.75</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
