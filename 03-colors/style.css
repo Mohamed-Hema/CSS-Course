@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #fdf6ec;
+  color: #3e2723;
+}
+
+/* ── Hero ── */
+.hero {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ── Page layout ── */
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  color: #4e342e;
+  margin: 48px 0 24px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #d7ccc8;
+}
+
+/* ── Color format demos ── */
+.color-swatches {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.swatch {
+  flex: 1;
+  min-width: 160px;
+  border-radius: 12px;
+  padding: 24px 20px;
+  color: #fff;
+}
+
+.swatch .label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+.swatch .value {
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: monospace;
+}
+
+/* ── Named color ── */
+.swatch-named {
+  background-color: white; // background color
+  color: black; // text color
+}
+/* ── Hex ── */
+.swatch-hex {
+  background-color: #df823a;
+}
+/* ── RGB ── */
+.swatch-rgb {
+  background-color: rgb(210, 120, 50);
+}
+/* ── HSL ── */
+.swatch-hsl {
+  background-color: hsl(25, 75%, 35%);
+}
+/* ── RGBA ── */
+.swatch-rgba {
+  background-color: rgba(74, 55, 40, 0.85);
+}
+
+/* ── About & Specials sections ── */
+.section-about {
+  padding: 32px;
+  border-radius: 12px;
+  margin-top: 16px;
+}
+
+.section-about h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.section-about p {
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* ── Specials grid ── */
+.specials-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.special-card {
+  flex: 1;
+  min-width: 160px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.special-card .drink {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.special-card .price {
+  font-size: 0.9rem;
+}

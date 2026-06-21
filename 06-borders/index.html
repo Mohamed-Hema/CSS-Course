@@ -4,87 +4,131 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lesson 06 – Borders & Outlines | BrewHaven Coffee</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
+
       body {
-        font-family: Georgia, "Times New Roman", serif;
+        font-family: "Inter", sans-serif;
         background-color: #fdf6ec;
         color: #3e2723;
-        padding: 40px 20px;
+        padding: 40px 24px 60px;
       }
+
       h1 {
+        font-family: "Playfair Display", serif;
         text-align: center;
-        font-size: 2.2rem;
+        font-size: 2.6rem;
+        color: #4a3728;
         margin-bottom: 8px;
       }
+
       .tagline {
         text-align: center;
         font-style: italic;
         color: #795548;
-        margin-bottom: 32px;
+        margin-bottom: 48px;
+        letter-spacing: 1px;
       }
+
       .section-title {
+        font-family: "Playfair Display", serif;
         font-size: 1.4rem;
-        margin: 32px 0 16px;
+        margin: 40px 0 20px;
         color: #4e342e;
       }
+
+      /* ── Menu grid ── */
       .menu-grid {
         display: flex;
         flex-wrap: wrap;
-        gap: 24px;
+        gap: 20px;
         justify-content: center;
       }
+
       .menu-card {
         background: #fffaf0;
-        width: 220px;
-        padding: 20px;
+        width: 200px;
+        padding: 24px 20px;
         text-align: center;
+        border-radius: 12px;
       }
+
+      .menu-card .emoji {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+
       .menu-card h3 {
-        margin-bottom: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #4e342e;
+        margin-bottom: 4px;
       }
+
+      .menu-card .desc {
+        font-size: 0.8rem;
+        color: #a1887f;
+        margin-bottom: 10px;
+      }
+
       .menu-card .price {
-        font-weight: bold;
+        font-weight: 700;
         color: #6d4c41;
-        margin-top: 8px;
+        font-size: 1.1rem;
       }
+
+      /* ── Profile ── */
       .profile-section {
         text-align: center;
-        margin-top: 40px;
+        margin-top: 16px;
       }
+
       .profile-img {
-        width: 120px;
-        height: 120px;
+        width: 110px;
+        height: 110px;
         background-color: #d7ccc8;
         display: inline-block;
       }
+
       .profile-section p {
         margin-top: 12px;
         font-style: italic;
+        color: #795548;
       }
+
+      /* ── Shadow cards ── */
       .hover-cards {
         display: flex;
         flex-wrap: wrap;
-        gap: 24px;
+        gap: 20px;
         justify-content: center;
-        margin-top: 24px;
+        margin-top: 16px;
       }
+
       .shadow-card {
         background: #fffaf0;
-        width: 240px;
+        width: 220px;
         padding: 24px;
         text-align: center;
-        transition: box-shadow 0.3s ease;
+        border-radius: 12px;
       }
+
       .shadow-card h3 {
-        margin-bottom: 8px;
+        font-weight: 600;
+        color: #4e342e;
+        margin-bottom: 6px;
       }
+
       .shadow-card .desc {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         color: #795548;
       }
     </style>
@@ -93,37 +137,41 @@
     <h1>BrewHaven Coffee</h1>
     <p class="tagline">Artisan roasts, cozy vibes</p>
 
-    <h2 class="section-title">Our Menu — Border Styles</h2>
+    <h2 class="section-title">Border Styles</h2>
     <div class="menu-grid">
       <div class="menu-card card-solid">
+        <p class="emoji">☕</p>
         <h3>Espresso</h3>
-        <p>Rich and bold single shot</p>
+        <p class="desc">Rich and bold single shot</p>
         <p class="price">$3.50</p>
       </div>
       <div class="menu-card card-dashed">
+        <p class="emoji">🍶</p>
         <h3>Cappuccino</h3>
-        <p>Espresso with steamed milk foam</p>
+        <p class="desc">Steamed milk foam</p>
         <p class="price">$4.50</p>
       </div>
       <div class="menu-card card-dotted">
+        <p class="emoji">🧊</p>
         <h3>Cold Brew</h3>
-        <p>Slow-steeped for 16 hours</p>
+        <p class="desc">Slow-steeped 16 hours</p>
         <p class="price">$4.00</p>
       </div>
       <div class="menu-card card-double">
+        <p class="emoji">🍵</p>
         <h3>Matcha Latte</h3>
-        <p>Ceremonial-grade matcha</p>
+        <p class="desc">Ceremonial-grade matcha</p>
         <p class="price">$5.00</p>
       </div>
     </div>
 
-    <h2 class="section-title">Barista Profile</h2>
+    <h2 class="section-title">border-radius: 50% — Circle Avatar</h2>
     <div class="profile-section">
       <div class="profile-img"></div>
-      <p>Our head barista, Sofia</p>
+      <p>Sofia — Head Barista</p>
     </div>
 
-    <h2 class="section-title">Shadow Cards</h2>
+    <h2 class="section-title">box-shadow</h2>
     <div class="hover-cards">
       <div class="shadow-card">
         <h3>Single Origin</h3>

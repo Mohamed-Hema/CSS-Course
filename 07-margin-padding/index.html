@@ -4,66 +4,105 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lesson 07 – Margin & Padding | BrewHaven Coffee</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
+
       body {
-        font-family: Georgia, "Times New Roman", serif;
+        font-family: "Inter", sans-serif;
         background-color: #fdf6ec;
         color: #3e2723;
       }
+
       h1 {
-        font-size: 2.2rem;
+        font-family: "Playfair Display", serif;
+        font-size: 2.6rem;
+        color: #4a3728;
       }
+
       .tagline {
         font-style: italic;
         color: #795548;
+        letter-spacing: 1px;
       }
+
       .section-title {
+        font-family: "Playfair Display", serif;
         font-size: 1.4rem;
         color: #4e342e;
         border-bottom: 2px solid #d7ccc8;
       }
+
       .menu-item {
         background: #fffaf0;
         border: 1px solid #d7ccc8;
-        border-radius: 8px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
+
+      .menu-item .emoji {
+        font-size: 1.6rem;
+      }
+
       .menu-item h3 {
         color: #4e342e;
+        font-weight: 600;
+        font-size: 1rem;
       }
-      .menu-item .price {
-        font-weight: bold;
-        color: #6d4c41;
-      }
+
       .menu-item .desc {
-        font-size: 0.9rem;
-        color: #795548;
+        font-size: 0.82rem;
+        color: #a1887f;
       }
+
+      .menu-item .price {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        color: #6d4c41;
+        font-size: 1.1rem;
+        white-space: nowrap;
+      }
+
+      /* ── Margin collapse demo ── */
       .collapse-demo {
         background: #efebe9;
         border: 1px dashed #bcaaa4;
-        border-radius: 6px;
+        border-radius: 8px;
       }
-      .collapse-demo h2 {
+
+      .collapse-demo .block-a {
         background: #d7ccc8;
         color: #3e2723;
+        font-weight: 600;
+        border-radius: 6px 6px 0 0;
       }
-      .collapse-demo p {
+
+      .collapse-demo .block-b {
         background: #fffaf0;
+        color: #5d4037;
+        border-radius: 0 0 6px 6px;
       }
+
       .hint {
         font-size: 0.85rem;
         color: #a1887f;
         font-style: italic;
       }
+
       .address {
         text-align: center;
         color: #795548;
         border-top: 1px solid #d7ccc8;
+        font-style: italic;
       }
     </style>
   </head>
@@ -75,38 +114,50 @@
       <h2 class="section-title">Menu</h2>
 
       <div class="menu-item">
-        <h3>Espresso</h3>
-        <p class="desc">Rich and bold single shot</p>
-        <p class="price">$3.50</p>
+        <span class="emoji">☕</span>
+        <div>
+          <h3>Espresso</h3>
+          <p class="desc">Rich and bold single shot</p>
+        </div>
+        <span class="price">$3.50</span>
       </div>
 
       <div class="menu-item">
-        <h3>Cappuccino</h3>
-        <p class="desc">Espresso with steamed milk foam</p>
-        <p class="price">$4.50</p>
+        <span class="emoji">🍶</span>
+        <div>
+          <h3>Cappuccino</h3>
+          <p class="desc">Steamed milk foam</p>
+        </div>
+        <span class="price">$4.50</span>
       </div>
 
       <div class="menu-item">
-        <h3>Cold Brew</h3>
-        <p class="desc">Slow-steeped for 16 hours</p>
-        <p class="price">$4.00</p>
+        <span class="emoji">🧊</span>
+        <div>
+          <h3>Cold Brew</h3>
+          <p class="desc">Slow-steeped 16 hours</p>
+        </div>
+        <span class="price">$4.00</span>
       </div>
 
       <div class="menu-item">
-        <h3>Matcha Latte</h3>
-        <p class="desc">Ceremonial-grade matcha</p>
-        <p class="price">$5.00</p>
+        <span class="emoji">🍵</span>
+        <div>
+          <h3>Matcha Latte</h3>
+          <p class="desc">Ceremonial-grade matcha</p>
+        </div>
+        <span class="price">$5.00</span>
       </div>
 
       <h2 class="section-title">Margin Collapse Demo</h2>
       <p class="hint">
-        Both h2 and p below have 24px margins — but the gap between them is only
-        24px (not 48px). That is margin collapse!
+        Both blocks have <code>margin: 24px</code> — but the gap between them
+        collapses to just 24px (not 48px).
       </p>
 
       <div class="collapse-demo">
-        <h2>Section Title</h2>
-        <p>Paragraph content goes here.</p>
+        <div class="block-a">Block A — margin-bottom: 24px</div>
+        <div class="block-b">Block B — margin-top: 24px</div>
       </div>
 
       <p class="address">42 Bean Street, Roastville</p>

@@ -4,88 +4,172 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lesson 07 – Margin & Padding | BrewHaven Coffee</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
+
       body {
-        font-family: Georgia, "Times New Roman", serif;
+        font-family: "Inter", sans-serif;
         background-color: #fdf6ec;
         color: #3e2723;
       }
+
+      /* ── Page container: margin auto to center ── */
+      .page-container {
+        max-width: 720px;
+        /* margin: 0 auto — centers the container */
+        margin: 0 auto;
+        /* padding: space between container edge and content */
+        padding: 48px 24px 60px;
+      }
+
       h1 {
-        font-size: 2.2rem;
-        padding-bottom: 4px;
+        font-family: "Playfair Display", serif;
+        font-size: 2.6rem;
+        color: #4a3728;
+        /* margin-bottom: space below the heading */
         margin-bottom: 8px;
       }
+
       .tagline {
         font-style: italic;
         color: #795548;
-        margin-bottom: 32px;
+        letter-spacing: 1px;
+        /* margin-bottom: gap before next section */
+        margin-bottom: 40px;
       }
+
       .section-title {
+        font-family: "Playfair Display", serif;
         font-size: 1.4rem;
         color: #4e342e;
         border-bottom: 2px solid #d7ccc8;
-        padding: 12px 0;
-        margin-bottom: 24px;
+        /* padding-bottom: space between text and underline */
+        padding-bottom: 10px;
+        /* margin: space around the section title */
+        margin: 40px 0 20px;
       }
+
+      /* ── Menu items – padding inside, margin between ── */
       .menu-item {
         background: #fffaf0;
         border: 1px solid #d7ccc8;
-        border-radius: 8px;
-        padding: 20px 24px;
-        margin-bottom: 16px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* padding: space inside the card */
+        padding: 18px 22px;
+        /* margin-bottom: space between cards */
+        margin-bottom: 12px;
+        gap: 16px;
+        box-shadow: 0 1px 6px rgba(62, 39, 35, 0.06);
+        transition: box-shadow 0.2s;
       }
+
+      .menu-item:hover {
+        box-shadow: 0 4px 16px rgba(62, 39, 35, 0.12);
+      }
+
+      .menu-item:last-of-type {
+        margin-bottom: 0;
+      }
+
+      .menu-item .emoji {
+        font-size: 1.6rem;
+        /* margin-right handled by gap */
+        flex-shrink: 0;
+      }
+
+      .menu-item .info {
+        flex: 1;
+      }
+
       .menu-item h3 {
         color: #4e342e;
-        margin-bottom: 4px;
+        font-weight: 600;
+        font-size: 1rem;
+        /* margin-bottom: tight gap between name and desc */
+        margin-bottom: 2px;
       }
-      .menu-item .price {
-        font-weight: bold;
-        color: #6d4c41;
-        margin-top: 8px;
-      }
+
       .menu-item .desc {
-        font-size: 0.9rem;
-        color: #795548;
+        font-size: 0.82rem;
+        color: #a1887f;
       }
-      .page-container {
-        max-width: 720px;
-        margin: 0 auto;
-        padding: 40px 20px;
+
+      .menu-item .price {
+        font-family: "Playfair Display", serif;
+        font-weight: 700;
+        color: #6d4c41;
+        font-size: 1.15rem;
+        white-space: nowrap;
       }
-      .collapse-demo {
-        background: #efebe9;
-        border: 1px dashed #bcaaa4;
-        border-radius: 6px;
-        padding: 24px;
-        margin-top: 40px;
-      }
-      .collapse-demo h2 {
-        background: #d7ccc8;
-        color: #3e2723;
-        margin-bottom: 24px;
-        padding: 8px;
-      }
-      .collapse-demo p {
-        background: #fffaf0;
-        margin-top: 24px;
-        padding: 8px;
-      }
+
+      /* ── Margin collapse demo ── */
       .hint {
         font-size: 0.85rem;
         color: #a1887f;
         font-style: italic;
+        /* margin-bottom: gap before demo box */
+        margin-bottom: 16px;
+        background: #efebe9;
+        padding: 10px 16px;
+        border-radius: 6px;
       }
+
+      .collapse-demo {
+        background: #efebe9;
+        border: 2px dashed #bcaaa4;
+        border-radius: 10px;
+        /* padding: space between wrapper and inner blocks */
+        padding: 0 16px;
+        overflow: hidden;
+      }
+
+      .collapse-demo .block-a {
+        background: #d7ccc8;
+        color: #3e2723;
+        font-weight: 600;
+        border-radius: 6px;
+        /* padding inside the block */
+        padding: 14px 18px;
+        /* margin-bottom: 24px — will collapse with block-b's margin-top */
+        margin-bottom: 24px;
+        margin-top: 16px;
+        font-size: 0.9rem;
+      }
+
+      .collapse-demo .block-b {
+        background: #fffaf0;
+        color: #5d4037;
+        border-radius: 6px;
+        padding: 14px 18px;
+        /* margin-top: 24px — collapses with block-a's margin-bottom → only 24px gap, not 48px */
+        margin-top: 24px;
+        margin-bottom: 16px;
+        font-size: 0.9rem;
+      }
+
+      /* ── Footer address ── */
       .address {
         text-align: center;
         color: #795548;
         border-top: 1px solid #d7ccc8;
-        padding: 24px 0;
-        margin-top: 40px;
+        /* padding: space between border and text */
+        padding: 28px 0;
+        /* margin-top: gap above the footer */
+        margin-top: 48px;
+        font-style: italic;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
       }
     </style>
   </head>
@@ -97,38 +181,50 @@
       <h2 class="section-title">Menu</h2>
 
       <div class="menu-item">
-        <h3>Espresso</h3>
-        <p class="desc">Rich and bold single shot</p>
-        <p class="price">$3.50</p>
+        <span class="emoji">☕</span>
+        <div class="info">
+          <h3>Espresso</h3>
+          <p class="desc">Rich and bold single shot</p>
+        </div>
+        <span class="price">$3.50</span>
       </div>
 
       <div class="menu-item">
-        <h3>Cappuccino</h3>
-        <p class="desc">Espresso with steamed milk foam</p>
-        <p class="price">$4.50</p>
+        <span class="emoji">🍶</span>
+        <div class="info">
+          <h3>Cappuccino</h3>
+          <p class="desc">Steamed milk foam</p>
+        </div>
+        <span class="price">$4.50</span>
       </div>
 
       <div class="menu-item">
-        <h3>Cold Brew</h3>
-        <p class="desc">Slow-steeped for 16 hours</p>
-        <p class="price">$4.00</p>
+        <span class="emoji">🧊</span>
+        <div class="info">
+          <h3>Cold Brew</h3>
+          <p class="desc">Slow-steeped 16 hours</p>
+        </div>
+        <span class="price">$4.00</span>
       </div>
 
       <div class="menu-item">
-        <h3>Matcha Latte</h3>
-        <p class="desc">Ceremonial-grade matcha</p>
-        <p class="price">$5.00</p>
+        <span class="emoji">🍵</span>
+        <div class="info">
+          <h3>Matcha Latte</h3>
+          <p class="desc">Ceremonial-grade matcha</p>
+        </div>
+        <span class="price">$5.00</span>
       </div>
 
-      <h2 class="section-title">Margin Collapse Demo</h2>
+      <h2 class="section-title">Margin Collapse</h2>
       <p class="hint">
-        Both h2 and p below have 24px margins — but the gap between them is only
-        24px (not 48px). That is margin collapse!
+        Both blocks have <code>margin: 24px</code> — the gap collapses to
+        <strong>24px</strong>, not 48px. That's margin collapse!
       </p>
 
       <div class="collapse-demo">
-        <h2>Section Title</h2>
-        <p>Paragraph content goes here.</p>
+        <div class="block-a">Block A — margin-bottom: 24px</div>
+        <div class="block-b">Block B — margin-top: 24px</div>
       </div>
 
       <p class="address">42 Bean Street, Roastville</p>

@@ -4,99 +4,125 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lesson 08 – Width, Height & Units | BrewHaven Coffee</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
+
       body {
-        font-family: Georgia, "Times New Roman", serif;
+        font-family: "Inter", sans-serif;
         background-color: #fdf6ec;
         color: #3e2723;
-        padding: 20px;
+        padding: 40px 24px 60px;
       }
+
       h1 {
+        font-family: "Playfair Display", serif;
         text-align: center;
-        font-size: 2.2rem;
+        font-size: 2.6rem;
+        color: #4a3728;
         margin-bottom: 8px;
       }
+
       .tagline {
         text-align: center;
         font-style: italic;
         color: #795548;
-        margin-bottom: 32px;
+        margin-bottom: 48px;
       }
+
       .section-title {
+        font-family: "Playfair Display", serif;
         font-size: 1.4rem;
         color: #4e342e;
         border-bottom: 2px solid #d7ccc8;
         padding-bottom: 8px;
-        margin: 32px 0 16px;
+        margin: 40px 0 20px;
       }
+
+      /* ── Menu Cards ── */
+      .menu-row {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
       .card {
         background: #fffaf0;
         border: 1px solid #d7ccc8;
-        border-radius: 8px;
-        padding: 20px;
-        margin-bottom: 16px;
+        border-radius: 10px;
+        padding: 18px 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
       }
-      .card h3 {
-        margin-bottom: 8px;
-        color: #4e342e;
-      }
-      .card .price {
-        font-weight: bold;
-        color: #6d4c41;
-      }
+
+      .card .emoji { font-size: 1.5rem; flex-shrink: 0; }
+      .card h3 { color: #4e342e; font-weight: 600; font-size: 0.95rem; }
+      .card .price { font-weight: 700; color: #6d4c41; font-family: "Playfair Display", serif; }
+
+      /* ── Sidebar layout ── */
       .layout-wrapper {
         display: flex;
-        gap: 0;
-        margin-top: 16px;
+        border: 1px solid #d7ccc8;
+        border-radius: 10px;
+        overflow: hidden;
       }
+
       .sidebar {
         background: #efebe9;
         border-right: 2px solid #d7ccc8;
         padding: 20px;
       }
-      .sidebar h3 {
-        margin-bottom: 12px;
-        color: #4e342e;
-      }
-      .sidebar ul {
-        list-style: none;
-      }
-      .sidebar li {
-        padding: 6px 0;
-        color: #6d4c41;
-      }
+
+      .sidebar h3 { color: #4e342e; margin-bottom: 12px; font-size: 0.95rem; }
+      .sidebar ul { list-style: none; }
+      .sidebar li { padding: 6px 0; color: #6d4c41; font-size: 0.9rem; border-bottom: 1px solid #d7ccc8; }
+      .sidebar li:last-child { border-bottom: none; }
+
       .main-content {
         padding: 20px;
+        flex: 1;
       }
-      .main-content h3 {
-        margin-bottom: 12px;
-        color: #4e342e;
-      }
+
+      .main-content h3 { color: #4e342e; margin-bottom: 8px; }
+      .main-content p { line-height: 1.6; color: #5d4037; font-size: 0.9rem; }
+
+      /* ── Unit comparison ── */
       .unit-boxes {
         display: flex;
         flex-wrap: wrap;
         gap: 16px;
-        margin-top: 16px;
+        margin-top: 8px;
       }
+
       .unit-box {
         background: #d7ccc8;
-        border-radius: 6px;
+        border-radius: 8px;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        font-weight: bold;
+        font-weight: 700;
         color: #3e2723;
+        gap: 4px;
       }
+
+      .unit-box .unit-label { font-size: 1rem; }
+      .unit-box .unit-value { font-size: 0.7rem; font-family: monospace; opacity: 0.7; }
+
       .hint {
         font-size: 0.85rem;
         color: #a1887f;
         font-style: italic;
-        margin-top: 8px;
+        margin-top: 12px;
       }
     </style>
   </head>
@@ -106,17 +132,22 @@
       <p class="tagline">Artisan roasts, cozy vibes</p>
 
       <h2 class="section-title">Our Menu</h2>
-      <div class="card">
-        <h3>Espresso</h3>
-        <p class="price">$3.50</p>
-      </div>
-      <div class="card">
-        <h3>Cappuccino</h3>
-        <p class="price">$4.50</p>
-      </div>
-      <div class="card">
-        <h3>Cold Brew</h3>
-        <p class="price">$4.00</p>
+      <div class="menu-row">
+        <div class="card">
+          <span class="emoji">☕</span>
+          <h3>Espresso</h3>
+          <span class="price">$3.50</span>
+        </div>
+        <div class="card">
+          <span class="emoji">🍶</span>
+          <h3>Cappuccino</h3>
+          <span class="price">$4.50</span>
+        </div>
+        <div class="card">
+          <span class="emoji">🧊</span>
+          <h3>Cold Brew</h3>
+          <span class="price">$4.00</span>
+        </div>
       </div>
 
       <h2 class="section-title">Sidebar Layout</h2>
@@ -141,12 +172,24 @@
 
       <h2 class="section-title">Unit Comparison</h2>
       <div class="unit-boxes">
-        <div class="unit-box box-px">px</div>
-        <div class="unit-box box-em">em</div>
-        <div class="unit-box box-rem">rem</div>
-        <div class="unit-box box-vh">vw/vh</div>
+        <div class="unit-box box-px">
+          <span class="unit-label">px</span>
+          <span class="unit-value">150px × 80px</span>
+        </div>
+        <div class="unit-box box-em">
+          <span class="unit-label">em</span>
+          <span class="unit-value">10em × 5em</span>
+        </div>
+        <div class="unit-box box-rem">
+          <span class="unit-label">rem</span>
+          <span class="unit-value">10rem × 5rem</span>
+        </div>
+        <div class="unit-box box-vw">
+          <span class="unit-label">vw/vh</span>
+          <span class="unit-value">30vw × 12vh</span>
+        </div>
       </div>
-      <p class="hint">Resize the window to see how vw/vh units respond.</p>
+      <p class="hint">Resize the window to see how vw/vh responds.</p>
     </div>
   </body>
 </html>

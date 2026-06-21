@@ -4,124 +4,173 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lesson 08 – Width, Height & Units | BrewHaven Coffee</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
+
       body {
-        font-family: Georgia, "Times New Roman", serif;
+        font-family: "Inter", sans-serif;
         background-color: #fdf6ec;
         color: #3e2723;
-        padding: 20px;
+        padding: 40px 24px 60px;
       }
+
       h1 {
+        font-family: "Playfair Display", serif;
         text-align: center;
-        font-size: 2.2rem;
+        font-size: 2.6rem;
+        color: #4a3728;
         margin-bottom: 8px;
       }
+
       .tagline {
         text-align: center;
         font-style: italic;
         color: #795548;
-        margin-bottom: 32px;
+        margin-bottom: 48px;
       }
+
       .section-title {
+        font-family: "Playfair Display", serif;
         font-size: 1.4rem;
         color: #4e342e;
         border-bottom: 2px solid #d7ccc8;
         padding-bottom: 8px;
-        margin: 32px 0 16px;
+        margin: 40px 0 20px;
       }
+
+      /* ── Page container – width + max-width ── */
+      .page-container {
+        /* width: percentage of the viewport */
+        width: 90%;
+        /* max-width: never exceeds this */
+        max-width: 860px;
+        /* margin: 0 auto centers it */
+        margin: 0 auto;
+      }
+
+      /* ── Menu Cards – max-width: 100% ── */
+      .menu-row {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
       .card {
         background: #fffaf0;
         border: 1px solid #d7ccc8;
-        border-radius: 8px;
-        padding: 20px;
-        margin-bottom: 16px;
+        border-radius: 10px;
+        padding: 18px 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        /* max-width: 100% — never overflows its parent */
         max-width: 100%;
+        box-shadow: 0 1px 6px rgba(62, 39, 35, 0.06);
       }
-      .card h3 {
-        margin-bottom: 8px;
-        color: #4e342e;
-      }
+
+      .card .emoji { font-size: 1.5rem; flex-shrink: 0; }
+      .card h3 { color: #4e342e; font-weight: 600; font-size: 0.95rem; flex: 1; }
       .card .price {
-        font-weight: bold;
+        font-weight: 700;
         color: #6d4c41;
+        font-family: "Playfair Display", serif;
+        font-size: 1.1rem;
       }
+
+      /* ── Sidebar – fixed width + calc() ── */
       .layout-wrapper {
         display: flex;
-        gap: 0;
-        margin-top: 16px;
+        border: 1px solid #d7ccc8;
+        border-radius: 10px;
+        overflow: hidden;
+        min-height: 200px;
       }
+
       .sidebar {
         background: #efebe9;
         border-right: 2px solid #d7ccc8;
         padding: 20px;
-        width: 250px;
+        /* fixed pixel width */
+        width: 220px;
+        flex-shrink: 0;
       }
-      .sidebar h3 {
-        margin-bottom: 12px;
-        color: #4e342e;
-      }
-      .sidebar ul {
-        list-style: none;
-      }
+
+      .sidebar h3 { color: #4e342e; margin-bottom: 12px; font-size: 0.95rem; }
+      .sidebar ul { list-style: none; }
       .sidebar li {
-        padding: 6px 0;
+        padding: 8px 0;
         color: #6d4c41;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #d7ccc8;
       }
+      .sidebar li:last-child { border-bottom: none; }
+
       .main-content {
-        padding: 20px;
-        width: calc(100% - 250px);
-        min-height: 300px;
+        padding: 24px;
+        /* calc(): fill remaining space */
+        width: calc(100% - 220px);
+        /* min-height keeps it tall enough */
+        min-height: 200px;
       }
-      .main-content h3 {
-        margin-bottom: 12px;
-        color: #4e342e;
-      }
+
+      .main-content h3 { color: #4e342e; margin-bottom: 8px; font-size: 1rem; }
+      .main-content p { line-height: 1.7; color: #5d4037; font-size: 0.9rem; }
+
+      /* ── Unit comparison boxes ── */
       .unit-boxes {
         display: flex;
         flex-wrap: wrap;
         gap: 16px;
-        margin-top: 16px;
+        margin-top: 8px;
+        align-items: flex-end;
       }
+
       .unit-box {
-        background: #d7ccc8;
-        border-radius: 6px;
+        background: linear-gradient(135deg, #d7ccc8, #bcaaa4);
+        border-radius: 10px;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        font-weight: bold;
+        font-weight: 700;
         color: #3e2723;
+        gap: 4px;
+        box-shadow: 0 2px 8px rgba(62, 39, 35, 0.1);
       }
+
+      .unit-box .unit-label { font-size: 1rem; }
+      .unit-box .unit-value {
+        font-size: 0.68rem;
+        font-family: monospace;
+        opacity: 0.75;
+        text-align: center;
+        padding: 0 4px;
+      }
+
+      /* Each box uses a different unit */
+      .box-px  { width: 150px;  height: 90px; }
+      .box-em  { width: 10em;   height: 5.5em; }
+      .box-rem { width: 10rem;  height: 5.5rem; }
+      .box-vw  { width: 25vw;   height: 12vh; }
+
       .hint {
         font-size: 0.85rem;
         color: #a1887f;
         font-style: italic;
-        margin-top: 8px;
-      }
-      .page-container {
-        width: 90%;
-        max-width: 54rem;
-        margin: 0 auto;
-      }
-      .box-px {
-        width: 150px;
-        height: 80px;
-      }
-      .box-em {
-        width: 10em;
-        height: 5em;
-      }
-      .box-rem {
-        width: 10rem;
-        height: 5rem;
-      }
-      .box-vh {
-        width: 30vw;
-        height: 12vh;
+        margin-top: 14px;
+        background: #efebe9;
+        padding: 10px 16px;
+        border-radius: 6px;
+        display: inline-block;
       }
     </style>
   </head>
@@ -131,20 +180,25 @@
       <p class="tagline">Artisan roasts, cozy vibes</p>
 
       <h2 class="section-title">Our Menu</h2>
-      <div class="card">
-        <h3>Espresso</h3>
-        <p class="price">$3.50</p>
-      </div>
-      <div class="card">
-        <h3>Cappuccino</h3>
-        <p class="price">$4.50</p>
-      </div>
-      <div class="card">
-        <h3>Cold Brew</h3>
-        <p class="price">$4.00</p>
+      <div class="menu-row">
+        <div class="card">
+          <span class="emoji">☕</span>
+          <h3>Espresso</h3>
+          <span class="price">$3.50</span>
+        </div>
+        <div class="card">
+          <span class="emoji">🍶</span>
+          <h3>Cappuccino</h3>
+          <span class="price">$4.50</span>
+        </div>
+        <div class="card">
+          <span class="emoji">🧊</span>
+          <h3>Cold Brew</h3>
+          <span class="price">$4.00</span>
+        </div>
       </div>
 
-      <h2 class="section-title">Sidebar Layout</h2>
+      <h2 class="section-title">Sidebar Layout — width + calc()</h2>
       <div class="layout-wrapper">
         <div class="sidebar">
           <h3>Categories</h3>
@@ -159,19 +213,32 @@
           <h3>Featured This Week</h3>
           <p>
             Try our seasonal pumpkin spice latte — available while supplies
-            last.
+            last. The sidebar is <code>width: 220px</code>; the content area
+            uses <code>width: calc(100% - 220px)</code>.
           </p>
         </div>
       </div>
 
       <h2 class="section-title">Unit Comparison</h2>
       <div class="unit-boxes">
-        <div class="unit-box box-px">px</div>
-        <div class="unit-box box-em">em</div>
-        <div class="unit-box box-rem">rem</div>
-        <div class="unit-box box-vh">vw/vh</div>
+        <div class="unit-box box-px">
+          <span class="unit-label">px</span>
+          <span class="unit-value">150px × 90px</span>
+        </div>
+        <div class="unit-box box-em">
+          <span class="unit-label">em</span>
+          <span class="unit-value">10em × 5.5em</span>
+        </div>
+        <div class="unit-box box-rem">
+          <span class="unit-label">rem</span>
+          <span class="unit-value">10rem × 5.5rem</span>
+        </div>
+        <div class="unit-box box-vw">
+          <span class="unit-label">vw/vh</span>
+          <span class="unit-value">25vw × 12vh</span>
+        </div>
       </div>
-      <p class="hint">Resize the window to see how vw/vh units respond.</p>
+      <p class="hint">Resize the window — only the vw/vh box changes size.</p>
     </div>
   </body>
 </html>
